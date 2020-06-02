@@ -13,8 +13,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            MainPage()
                 .tabItem {
                     VStack {
                         Image("first")
@@ -22,6 +21,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
+            
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -31,6 +31,11 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+        }.onAppear {
+            var haveShownSetupAlert = mUserDefaults!.bool(forKey: "setupAlertShown")
+            
+            var userPrefs = UserPreferences()
+            mUserDefaults!.set(userPrefs.localSalesTax, forKey: "userLocalSalesTax")
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class ReceiptModel {
-    var billAmount: Double
+    var subtotal: Double
     var taxAmount: Double
     
     var partySize: Int
@@ -17,7 +17,7 @@ class ReceiptModel {
     var tipRate: Double
     
     init(billAmt: Double, taxAmt: Double, numPeople: Int, venue: Venue, tip: Double) {
-        self.billAmount = billAmt
+        self.subtotal = billAmt
         self.taxAmount = taxAmt
         self.partySize = numPeople
         self.venue = venue

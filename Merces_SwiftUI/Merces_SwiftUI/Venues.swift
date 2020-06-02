@@ -24,7 +24,5 @@ var venues: [Venue] = [
     Venue(name: "Delivery", tipRates: mUserDefaults?.array(forKey: "deliveryTipArray") as! [Double])
 ]
 
-var localSalesTax = mUserDefaults?.double(forKey: "userLocalSalesTax")
-
 var selectedVenue = "Quick"
 

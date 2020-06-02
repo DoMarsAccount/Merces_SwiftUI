@@ -15,11 +15,15 @@ class UserPreferences: ObservableObject {
     var subtotalIsPostTax: Bool
     var useDynamicText: Bool
     
+    var localSalesTax: Double
+    
     init() {
         tipIncludeTax = mUserDefaults!.bool(forKey: "tipIncludeTaxSwitchOnOff")
         roundTipAmount = mUserDefaults!.bool(forKey: "roundTipAmountSwitchOnOff")
         roundTotalAmount = mUserDefaults!.bool(forKey: "roundTotalAmountSwitchOnOff")
         subtotalIsPostTax = mUserDefaults!.bool(forKey: "subtotalIsPostTaxSwitchOnOff")
         useDynamicText = mUserDefaults!.bool(forKey: "useDynamicText")
+        
+        localSalesTax = mUserDefaults!.double(forKey: "userLocalSalesTax")
     }
 }
